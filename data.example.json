@@ -1,0 +1,148 @@
+{
+  "projets": [
+    {
+      "id": 1,
+      "projetId": "mon-super-projet",
+      "image": "images/cover-projet1.webp",
+      "alt": "Capture d'écran du projet de démonstration",
+      "titre": "Projet de Démonstration",
+      "tags": [
+        "Design",
+        "Web Dev"
+      ],
+      "categorie": "perso",
+      "importance": 8,
+      "annee": "2026",
+      "brief": "Ceci est la consigne ou l'objectif principal du projet.",
+      "sousTitre": "Une démonstration complète du panel d'administration",
+      "date": "Juin 2026",
+      "role": "Concepteur & Développeur",
+      "technos": "React, Figma, PHP",
+      "concept": "L'idée générale et le concept créatif du projet.",
+      "defis": "Les obstacles techniques rencontrés et surmontés.",
+      "resultats": "Ce que ce projet a apporté et les compétences apprises.",
+      "seo_title": "Projet Démo - Mon Portfolio",
+      "seo_description": "Découvrez le projet de démonstration géré avec le panel d'administration.",
+      "youtubeId": "",
+      "site": {
+        "url": "https://example.com",
+        "label": "Visiter le projet"
+      },
+      "status": "published",
+      "galerie": [
+        [
+          "images/galerie-img1.webp",
+          "Légende de la première image",
+          "image"
+        ],
+        [
+          "images/galerie-img2-portrait.webp",
+          "Légende d'un visuel vertical",
+          "image",
+          "portrait"
+        ]
+      ],
+      "dossier": [
+        {
+          "type": "text",
+          "titre": "Présentation du dossier",
+          "texte": "Voici un bloc de texte simple constituant le corps de votre dossier.",
+          "image1": "",
+          "alt1": "",
+          "legende1": "",
+          "image2": "",
+          "alt2": "",
+          "legende2": "",
+          "accent": ""
+        },
+        {
+          "type": "text_image",
+          "titre": "Analyse visuelle",
+          "texte": "Ce bloc affiche du texte sur la gauche et une image sur la droite.",
+          "image1": "images/demo-dossier-image1.webp",
+          "alt1": "Description visuelle",
+          "legende1": "Légende du visuel de droite",
+          "image2": "",
+          "alt2": "",
+          "legende2": "",
+          "accent": ""
+        }
+      ]
+    }
+  ],
+  "competencesHumaines": [
+    {
+      "icone": "🤝",
+      "titre": "Travail en équipe",
+      "description": "Collaboration agile et écoute active dans des équipes pluridisciplinaires."
+    }
+  ],
+  "competencesTechniques": [
+    {
+      "icone": "⚡",
+      "titre": "Développement Front-End",
+      "description": "Intégration pixel-perfect avec HTML, CSS, JavaScript et frameworks JS modernes."
+    }
+  ],
+  "logos": [
+    {
+      "chemin": "images/figma.svg",
+      "titre": "Figma",
+      "alt": "Logo Figma",
+      "classe": ""
+    },
+    {
+      "chemin": "images/react.svg",
+      "titre": "React",
+      "alt": "Logo React JS",
+      "classe": ""
+    }
+  ],
+  "portrait": {
+    "titre": "Créatif & Développeur",
+    "motCle": "Interactif",
+    "paragraphe1": "Je conçois des **interfaces élégantes** et performantes.",
+    "paragraphe2": "Bienvenue sur mon espace de création.",
+    "image": "images/portrait-avatar.webp"
+  },
+  "parcours": [
+    {
+      "annee": "2024 - 2026",
+      "titre": "Master Direction Artistique Numérique",
+      "description": "Spécialisation UX/UI et développement créatif."
+    }
+  ],
+  "influences": [
+    {
+      "titre": "Le Bauhaus",
+      "description": "Pour le minimalisme, l'harmonie entre art et industrie, et la fonctionnalité."
+    }
+  ],
+  "processusCreatif": [
+    {
+      "etape": 1,
+      "icone": "🔍",
+      "titre": "Recherche & Brief",
+      "description": "Compréhension fine du problème et des contraintes."
+    }
+  ],
+  "socials": {
+    "instagram": "https://instagram.com/mon-compte",
+    "behance": "https://behance.net/mon-profil",
+    "linkedin": "https://linkedin.com/in/mon-profil",
+    "github": "https://github.com/mon-compte",
+    "email": "hello@example.com"
+  },
+  "seo": {
+    "titre": "Portfolio — Concepteur Web",
+    "description": "Bienvenue sur mon portfolio de projets.",
+    "ogImage": "images/og-default.webp"
+  },
+  "tagsDisponibles": [
+    "Design",
+    "Web Dev",
+    "Branding",
+    "3D",
+    "Illustration"
+  ]
+}

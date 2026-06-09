@@ -1,0 +1,23 @@
+# Configuration d'accès et mots de passe
+credentials.php
+
+# Configurations d'API privées (Contient la clé d'API Gemini)
+data/ai_config.json
+
+# Fichiers statistiques locaux (Analytics)
+data/stats.json
+
+# Caches générés par l'admin panel
+og_cache/
+.thumbs/
+
+# Fichiers de données et images locaux du portfolio (selon la configuration)
+data.json
+images/
+../data.json
+../images/
+../public/data.json
+../public/images/
+
+# Éventuels fichiers de sauvegarde PHP de l'admin
+*.bak
