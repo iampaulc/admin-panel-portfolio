@@ -1,93 +1,73 @@
-# 📊 Panel Admin pour Portfolio Web (Sans Base de Données)
+# 📊 Panel Admin pour Portfolio Web (Sans SQL)
 
-Bienvenue dans ce Panel d'Administration universel et moderne conçu spécifiquement pour les portfolios de créatifs, designers et développeurs. 
-
-Ce panel est entièrement **autonome, léger, ultra-rapide et n'a pas besoin de base de données SQL (MySQL/PostgreSQL)**. Toutes les données du site (projets, compétences, textes, réseaux sociaux, SEO) sont stockées dans un unique fichier `data.json`, ce qui facilite grandement le chargement, la sauvegarde et l'exportation.
-
----
-
-## 🚀 Fonctionnalités du Panel
-
-### 1. Tableau de Bord (`index.php`)
-Un aperçu en temps réel des performances de votre site (Vues totales, visiteurs du jour, nombre de projets publiés, taille de la médiathèque) combiné à des raccourcis d'actions rapides et un tableau récapitulatif de vos projets.
-
-### 2. Gestion des Projets (`edit_projects.php`)
-- **CRUD Complet** : Création, modification, brouillon, archivage et suppression de projets.
-- **Réorganisation par Drag & Drop** : Réorganisez l'ordre d'affichage de vos projets sur votre site en les glissant-déposant.
-- **Dossier Académique (Blocs Composés)** : Permet de construire des pages projets complexes en combinant librement différents blocs :
-  - Blocs texte ou de consignes encadrées.
-  - Blocs mixtes (Texte + Image / Image + Texte).
-  - Images pleine largeur, mood boards, grilles de deux images.
-  - Blocs de code formaté et démonstrations interactives.
-  - Curseurs dynamiques Avant / Après.
-- **Galerie Multimédia** : Gestion d'images ordonnées avec légendes et vidéos (YouTube ou fichiers locaux).
-- **Import/Export de Projet** : Exportez un projet spécifique sous forme de fichier JSON ou de dossier compressé ZIP (incluant ses images) pour le réimporter sur une autre instance.
-
-### 3. Compétences & Logos (`edit_skills.php`, `edit_logos.php`)
-- **Soft & Hard Skills** : Renseignez vos compétences avec des émojis/icônes et des descriptions courtes.
-- **Médiathèque de Logos** : Ajoutez et organisez les logos de vos logiciels et langages maîtrisés (Figma, React, Photoshop, etc.) pour les associer ensuite à vos fiches projets.
-
-### 4. Rédaction assistée par IA Gemini (`settings_ai.php`, `api_ai.php`)
-- **Connexion Gemini** : Renseignez votre clé d'API gratuite et scannez en temps réel les modèles disponibles.
-- **Génération Contextuelle** : Dans vos fiches projets, utilisez l'assistant IA pour :
-  - Rédiger des briefs clients professionnels à partir de simples notes.
-  - Développer vos concepts créatifs et raconter vos défis techniques.
-  - Générer des titres SEO et des méta-descriptions optimisés pour Google.
-  - Rédiger des posts de partage LinkedIn, Twitter/X ou Instagram à partir des détails de vos projets.
-
-### 5. Médiathèque intelligente (`upload.php`, `media_modal.php`)
-- **Glisser-Déposer & Tri** : Uploadez plusieurs fichiers (images et vidéos) en drag & drop et recherchez-les par nom de fichier.
-- **Compression & Conversion WebP à la volée** : Choisissez votre niveau de compression lors de l'upload (Extrême, Forte, Moyenne, Légère, Aucune). Les images PNG/JPG sont converties automatiquement au format WebP (beaucoup plus léger) et les vidéos MP4 sont optimisées via FFmpeg (si disponible sur le serveur).
-- **Miniatures automatiques** : Pré-génération de miniatures ultra-légères dans un dossier masqué `.thumbs/` pour ne pas ralentir le panel lors de l'affichage de centaines d'images.
-
-### 6. Statistiques & Analytics (`stats.php`, `track.php`)
-- **Pas de Cookies publicitaires** : Système de statistiques éthique et léger.
-- **Indicateurs de Performance** : Suivi des vues globales, des visiteurs uniques quotidiens, du type d'appareil (Desktop, Mobile, Tablette), des sources de trafic (référents externes comme Google, LinkedIn, Behance...) et des clics sur vos boutons externes (liens de projets, CV, etc.).
-
-### 7. Outils SEO & Utilitaires (`sitemap_gen.php`, `backup.php`, `og_image.php`)
-- **Générateur de Sitemap** : Crée un fichier `sitemap.xml` propre à la racine de votre site à chaque clic pour indexer vos pages et projets sur Google.
-- **Image Open Graph Dynamique (`og_image.php`)** : Génère automatiquement à la volée l'image de partage sur les réseaux sociaux pour chaque projet (affiche le titre, la couverture floutée en fond et votre identité visuelle via la bibliothèque PHP GD).
-- **Backup Complet en un clic** : Télécharge instantanément un fichier ZIP contenant l'intégralité de vos données (`data.json`, `stats.json`, configuration IA et toutes vos images).
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-%3E%3D%207.4-8892BF.svg?style=for-the-badge&logo=php" alt="Version PHP" />
+  <img src="https://img.shields.io/badge/Version-2.0-blue.svg?style=for-the-badge" alt="Version du Panel" />
+  <img src="https://img.shields.io/badge/Base%20de%20donn%C3%A9es-JSON%20(Sans%20SQL)-orange.svg?style=for-the-badge&logo=json" alt="Base de données JSON" />
+  <img src="https://img.shields.io/badge/Cr%C3%A9ateur-Paul%20C.-pink.svg?style=for-the-badge" alt="Créateur" />
+</p>
 
 ---
 
-## 🛠️ Installation & Configuration
+Un panel d'administration moderne, sécurisé, fluide et **sans base de données relationnelle (NoSQL / JSON)** conçu spécifiquement pour les portfolios de créatifs, designers et développeurs. Toutes les données (projets, compétences, timeline, socials, SEO) sont centralisées dans un unique fichier `data.json`.
+
+---
+
+## 🌟 Fonctionnalités principales
+
+*   **Tableau de bord complet** : Indicateurs clés (vues, visiteurs uniques, projets, médias) et raccourcis d'actions.
+*   **Gestion de projets avancée** : Système CRUD avec réorganisation de l'ordre d'affichage par glisser-déposer.
+*   **Dossier académique flexible** : Composez des fiches de projets universitaires ou pro sur-mesure à l'aide de blocs prédéfinis (images côte à côte, moodboards, blocs de code, curseurs de comparaison avant/après).
+*   **Assistant IA Gemini intégré** : Auto-génération et optimisation de textes (briefs, concepts, titres SEO, méta-descriptions et posts pour les réseaux sociaux) directement depuis les pages de création.
+*   **Médiathèque intelligente** : Drag & drop de fichiers (images et vidéos), compression modulable, conversion automatique en format WebP léger, et génération automatique de miniatures.
+*   **Statistiques sans cookies** : Tracking éthique du trafic (pages vues, clics de boutons externes, terminaux de connexion, sources référentes).
+*   **SEO & Partage** : Générateur automatique de `sitemap.xml` et script d'image OpenGraph (`og_image.php`) générée à la volée.
+*   **Système de sauvegarde** : Exportation de projet en ZIP/JSON et sauvegarde globale du site en un clic.
+
+---
+
+## ⚙️ Installation & Configuration rapide
+
+<details>
+<summary><b>📖 Cliquez pour dérouler les étapes d'installation</b></summary>
 
 ### 1. Prérequis
-- Un hébergement ou serveur local avec **PHP 7.4 ou supérieur**.
-- La bibliothèque PHP **GD** activée (généralement incluse par défaut, requise pour les miniatures et images OpenGraph).
-- Droits d'écriture sur le dossier d'installation (pour pouvoir écrire `data.json`, générer `sitemap.xml`, et créer le dossier `images/`).
+*   Un hébergeur ou serveur local avec **PHP 7.4 ou supérieur**.
+*   L'extension PHP **GD** activée (requis pour les miniatures d'images et les cartes OpenGraph).
+*   Droits d'écriture sur le dossier d'installation (pour l'écriture du fichier `data.json` et la création du dossier `images/`).
 
 ### 2. Déploiement
-1. Téléchargez le dossier du panel (nommez-le par exemple `gestion_interne`) et placez-le dans votre projet.
-2. Pour des raisons de sécurité, assurez-vous que les fichiers sensibles sont ignorés par Git. Le fichier `.gitignore` fourni à la racine de ce dossier exclut automatiquement vos données personnelles :
-   - `credentials.php` (votre mot de passe administrateur)
-   - `data/ai_config.json` (votre clé API Gemini)
-   - `data/stats.json` (vos statistiques de visites)
-   - `images/` et `data.json` locaux de développement
+1. Clonez ou téléchargez ce dossier (nommez-le par exemple `gestion_interne` ou `admin`) et placez-le dans le dossier racine de votre site.
+2. Pour des raisons de sécurité, assurez-vous que les fichiers sensibles sont ignorés par Git. Le fichier `.gitignore` fourni à la racine de ce dossier exclut automatiquement :
+    *   `credentials.php` (votre mot de passe hashé)
+    *   `data/ai_config.json` (votre clé API Gemini)
+    *   `data/stats.json` (vos statistiques de visites locales)
+    *   Vos fichiers `data.json` et dossier `images/` de travail local.
 
-### 3. Configuration du fichier `config.php`
-Ouvrez config.php et ajustez les 4 sections simples :
-- **`PORTFOLIO_OWNER`** : Votre nom (ex: `"Paul C."`).
-- **`PORTFOLIO_URL`** : Lien vers votre site (`"../"` si l'admin est à l'intérieur du dossier de votre site).
-- **`ALLOWED_ORIGINS`** : Liste des domaines CORS autorisés à appeler les scripts de tracking (ex: `http://localhost:5173` pour React, `https://monportfolio.com` pour la production).
-- **`$dev_path`** : Si vous développez avec un framework comme React/Vite, spécifiez le chemin vers le dossier `public` de vos sources (ex: `../public/` ou `../react-portfolio/public/`) pour que l'admin y écrive directement pendant que vous codez.
+### 3. Paramétrage (`config.php`)
+Ouvrez `config.php` et ajustez les variables :
+*   **`PORTFOLIO_OWNER`** : Votre nom (ex: `"Paul C."`).
+*   **`PORTFOLIO_URL`** : Lien relatif ou absolu vers votre portfolio (ex: `"../"`).
+*   **`ALLOWED_ORIGINS`** : Liste des domaines CORS autorisés à envoyer des statistiques (ex: `http://localhost:5173` pour React, `https://monportfolio.com` pour la production).
+*   **`$dev_path`** : Si vous développez avec React, spécifiez le dossier public de vos sources (ex: `../public/`) pour que le panel y écrive en direct.
 
 ### 4. Premier Login
-1. Naviguez sur votre navigateur vers `https://votre-site.com/gestion_interne/login.php`.
+1. Accédez à `https://votre-site.com/gestion_interne/login.php`.
 2. Connectez-vous avec le mot de passe par défaut : **`admin123`**.
-3. Allez immédiatement dans l'onglet **Sécurité** (dans le menu latéral) pour modifier votre mot de passe. Cela va créer automatiquement le fichier sécurisé `credentials.php`.
+3. Allez dans l'onglet **Sécurité** pour modifier immédiatement votre mot de passe administrateur (ceci va générer le fichier sécurisé `credentials.php`).
+</details>
 
 ---
 
-## 💻 Guide d'Intégration Frontend
+## 💻 Guides d'intégration Frontend
 
-Voici comment connecter votre portfolio (en React ou en PHP/HTML/CSS classique) aux fonctions et données de votre panel d'administration.
+Déroulez l'option de votre choix selon la technologie utilisée pour votre portfolio :
 
-### Option A : Intégration dans un site React (Single Page App)
+<details>
+<summary><b>⚛️ Option A : Intégration dans un site React (Single Page App)</b></summary>
 
-#### 1. Lire et afficher les données du site (`data.json`)
-Puisque vos données sont stockées dans un fichier JSON statique à la racine de votre dossier public (ou copié lors du build), vous pouvez le charger via un simple appel `fetch` :
+### 1. Lire et afficher les données du site (`data.json`)
+Puisque vos données sont stockées dans un fichier JSON statique à la racine de votre dossier public, chargez-les simplement via `fetch` :
 
 ```jsx
 import React, { useEffect, useState } from 'react';
@@ -100,7 +80,7 @@ function Portfolio() {
     fetch('/data.json')
       .then(res => res.json())
       .then(json => {
-        // Trier les projets par importance décroissante (importance: 1 à 10)
+        // Optionnel : Trier les projets par score d'importance (10 à 1)
         if (json.projets) {
           json.projets.sort((a, b) => (b.importance || 5) - (a.importance || 5));
         }
@@ -118,14 +98,14 @@ function Portfolio() {
 
   return (
     <div>
-      {/* Affichage du Portrait d'accueil */}
+      {/* Affichage du Portrait */}
       <section className="hero">
         <h1>{data.portrait.titre}</h1>
         <p>{data.portrait.paragraphe1}</p>
         <img src={`/${data.portrait.image}`} alt="Avatar" />
       </section>
 
-      {/* Liste des Projets */}
+      {/* Grille des Projets */}
       <section className="projects-grid">
         {data.projets
           .filter(p => p.status === 'published')
@@ -145,14 +125,12 @@ function Portfolio() {
 }
 ```
 
-#### 2. Mettre en place le script de Tracking Analytics (`track.php`)
-Pour comptabiliser les visites sans cookies, vous devez envoyer des requêtes POST asynchrones vers le script `track.php` du panel admin.
-
-Créez un hook ou une fonction réutilisable pour suivre les pages vues et les clics :
+### 2. Suivi de visites / Analytics (`track.php`)
+Créez un module d'analytics Javascript pour appeler le script de tracking à chaque changement de page ou événement de clic :
 
 ```javascript
 // analytics.js
-const ADMIN_URL = '/gestion_interne'; // URL de votre dossier admin panel
+const ADMIN_URL = '/gestion_interne'; // Chemin vers le dossier admin
 
 // Tracker une page vue
 export function trackPageView(path) {
@@ -182,7 +160,7 @@ export function trackProjectView(projectId, path) {
   }).catch(() => {});
 }
 
-// Tracker un clic sur un lien externe (bouton CV, URL externe, réseaux)
+// Tracker un clic sur un lien externe (CV, réseaux sociaux, etc.)
 export function trackExternalClick(linkId) {
   fetch(`${ADMIN_URL}/track.php`, {
     method: 'POST',
@@ -195,19 +173,17 @@ export function trackExternalClick(linkId) {
 }
 ```
 
-Dans votre composant de routage principal (par exemple avec `react-router-dom`), déclenchez les événements lors des changements d'URL :
+Déclenchez ensuite ces fonctions lors du routage de votre SPA (par exemple avec `useEffect` de React Router) :
 
 ```jsx
 import { useEffect } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
-import { trackPageView, trackProjectView } from './analytics';
+import { useLocation } from 'react-router-dom';
+import { trackPageView } from './analytics';
 
-// Dans votre composant d'application global
-function PageTracker() {
+function RouteTracker() {
   const location = useLocation();
 
   useEffect(() => {
-    // Si nous ne sommes pas sur une page de projet spécifique
     if (!location.pathname.startsWith('/projet/')) {
       trackPageView(location.pathname);
     }
@@ -215,36 +191,18 @@ function PageTracker() {
 
   return null;
 }
-
-// Dans votre composant de Page Détail Projet
-function ProjectDetailPage() {
-  const { slug } = useParams(); // ex: mon-super-projet
-  
-  useEffect(() => {
-    if (slug) {
-      trackProjectView(slug, `/projet/${slug}`);
-    }
-  }, [slug]);
-
-  return (
-    <div>{/* Rendu du projet */}</div>
-  );
-}
 ```
+</details>
 
----
+<details>
+<summary><b>🐘 Option B : Intégration dans un site PHP / HTML / CSS Classique</b></summary>
 
-### Option B : Intégration dans un site PHP / HTML / CSS Classique
-
-Si votre site est codé en PHP traditionnel, l'intégration est encore plus directe car le fichier JSON peut être lu côté serveur avant l'envoi de la page au client.
-
-#### 1. Lire et afficher les données en PHP
-Créez une fonction utilitaire au début de vos pages PHP :
+### 1. Lire et afficher les données en PHP
+Le fichier JSON peut être lu côté serveur avant l'envoi du HTML :
 
 ```php
 <?php
-// Charger et décoder le JSON des données
-$data_file_path = __DIR__ . '/data.json'; // ou ajustez le chemin d'accès
+$data_file_path = __DIR__ . '/data.json';
 $data = [];
 
 if (file_exists($data_file_path)) {
@@ -252,10 +210,9 @@ if (file_exists($data_file_path)) {
     $data = json_decode($json_content, true) ?: [];
 }
 
-// Récupérer les projets
 $projets = isset($data['projets']) ? $data['projets'] : [];
 
-// Trier les projets par score d'importance (10 à 1)
+// Trier par importance
 usort($projets, function($a, $b) {
     $impA = isset($a['importance']) ? (int)$a['importance'] : 5;
     $impB = isset($b['importance']) ? (int)$b['importance'] : 5;
@@ -264,55 +221,31 @@ usort($projets, function($a, $b) {
 ?>
 ```
 
-Ensuite, affichez le contenu dans votre structure HTML :
+Affichez les variables directement dans vos pages :
 
 ```html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo htmlspecialchars($data['seo']['titre'] ?? 'Mon Portfolio'); ?></title>
-    <meta name="description" content="<?php echo htmlspecialchars($data['seo']['description'] ?? ''); ?>">
-</head>
-<body>
-
-    <!-- Section Portrait -->
-    <?php if (isset($data['portrait'])): $p = $data['portrait']; ?>
-    <section class="hero">
-        <h1><?php echo htmlspecialchars($p['titre']); ?></h1>
-        <p><?php echo htmlspecialchars($p['paragraphe1']); ?></p>
-        <img src="<?php echo htmlspecialchars($p['image']); ?>" alt="Portrait">
-    </section>
-    <?php endif; ?>
-
-    <!-- Grille des Projets -->
-    <section class="projects-grid">
-        <?php foreach ($projets as $projet): ?>
-            <?php if (($projet['status'] ?? 'published') !== 'published') continue; ?>
-            
-            <div class="project-card">
-                <img src="<?php echo htmlspecialchars($projet['image']); ?>" alt="<?php echo htmlspecialchars($projet['alt'] ?? ''); ?>">
-                <h3><?php echo htmlspecialchars($projet['titre']); ?></h3>
-                <p><?php echo htmlspecialchars($projet['sousTitre']); ?></p>
-                <a href="projet.php?slug=<?php echo $projet['projetId']; ?>">Voir le projet</a>
-            </div>
-        <?php endforeach; ?>
-    </section>
-
-</body>
-</html>
+<section class="projects-grid">
+    <?php foreach ($projets as $projet): ?>
+        <?php if (($projet['status'] ?? 'published') !== 'published') continue; ?>
+        <div class="project-card">
+            <img src="<?php echo htmlspecialchars($projet['image']); ?>" alt="">
+            <h3><?php echo htmlspecialchars($projet['titre']); ?></h3>
+            <p><?php echo htmlspecialchars($projet['sousTitre']); ?></p>
+            <a href="projet.php?slug=<?php echo $projet['projetId']; ?>">Découvrir</a>
+        </div>
+    <?php endforeach; ?>
+</section>
 ```
 
-#### 2. Suivi de visites en Javascript sur site PHP
-Pour ne pas ralentir le chargement des pages en PHP, vous pouvez placer le code de tracking dans un simple script Javascript en bas de vos fichiers (juste avant `</body>`) :
+### 2. Suivi de visites en JavaScript
+Ajoutez ce script asynchrone avant la fermeture de la balise `</body>` de vos pages :
 
 ```html
 <script>
-// Configuration
-const adminFolder = 'gestion_interne'; // Nom du dossier admin
+const adminFolder = 'gestion_interne';
 const trackingUrl = `${window.location.origin}/${adminFolder}/track.php`;
 
-// 1. Envoyer automatiquement la page vue
+// 1. Envoi page vue
 fetch(trackingUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -324,90 +257,30 @@ fetch(trackingUrl, {
     })
 }).catch(e => console.error(e));
 
-// 2. Si vous êtes sur une page de projet spécifique (détectée en PHP)
-<?php if (isset($is_project_page) && $is_project_page && isset($current_project_id)): ?>
-fetch(trackingUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-        action: 'projectview',
-        id: '<?php echo htmlspecialchars($current_project_id); ?>',
-        path: window.location.pathname,
-        screenWidth: window.innerWidth
-    })
-}).catch(e => console.error(e));
-<?php endif; ?>
-
-// 3. Suivre les clics sur les boutons de réseaux sociaux ou liens externes
+// 2. Événement clic externe
 function trackClick(elementId) {
     fetch(trackingUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            action: 'click',
-            id: elementId
-        })
+        body: JSON.stringify({ action: 'click', id: elementId })
     }).catch(() => {});
 }
 </script>
 ```
-
-Appliquez la fonction `trackClick` sur vos boutons importants :
-```html
-<a href="https://linkedin.com/in/..." onclick="trackClick('linkedin_link')" target="_blank">LinkedIn</a>
-<a href="mon-cv.pdf" onclick="trackClick('cv_download')" download>Télécharger mon CV</a>
-```
+</details>
 
 ---
 
-## 🖼️ Affichage des Images Uploadées
-Quand vous uploadez des fichiers via l'admin panel, ils sont placés dans le dossier `images/` de votre portfolio (défini par `IMAGES_UPLOAD_DIR`). 
+## 🛠️ Rendu et affichage des composants complexes
 
-### Bonnes Pratiques :
-1. **Chemin relatif** : Les chemins d'images enregistrés dans le fichier `data.json` sont sous la forme `images/mon-image.webp` (ou `images/dossier/mon-image.webp`).
-2. **Miniatures (`.thumbs/`)** : Si vous construisez une page d'accueil avec des dizaines de projets et souhaitez optimiser les temps de chargement, servez les miniatures générées par l'admin à la place de la couverture originale. 
-   - Chemin de l'image de couverture : `images/couverture.webp`
-   - Chemin de sa miniature automatique : `images/.thumbs/couverture.webp`
+Déroulez pour accéder aux structures de rendu de chaque type de contenu spécifique :
 
----
+<details>
+<summary><b>📝 1. Dossier Académique (Blocs Composés de Projets)</b></summary>
 
-## 🔍 Intégration de l'Image Open Graph Dynamique
+Le dossier composé est un tableau de blocs ayant chacun un format de grille spécifique (`type`).
 
-L'image Open Graph générée par `og_image.php` vous permet d'avoir un visuel de partage automatique et personnalisé pour chaque projet sur les réseaux sociaux (LinkedIn, Twitter/X, Discord, Slack, etc.).
-
-Dans la balise `<head>` de votre page projet (en PHP ou générée par SSR/React), injectez l'URL du script :
-
-```html
-<!-- Exemple pour la page de projet d'un portfolio PHP -->
-<meta property="og:title" content="<?php echo htmlspecialchars($projet['titre']); ?>" />
-<meta property="og:description" content="<?php echo htmlspecialchars($projet['seo_description'] ?? $projet['sousTitre']); ?>" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://monportfolio.com/projet/<?php echo $projet['projetId']; ?>" />
-
-<!-- Lien vers le script de génération d'image dynamique -->
-<meta property="og:image" content="https://monportfolio.com/gestion_interne/og_image.php?slug=<?php echo $projet['projetId']; ?>" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:type" content="image/png" />
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://monportfolio.com/gestion_interne/og_image.php?slug=<?php echo $projet['projetId']; ?>" />
-```
-
-Le script `og_image.php` s'occupera d'aller chercher la couverture du projet dans `images/`, d'appliquer un filtre sombre/flouté, d'ajouter le titre en grand, la catégorie et le nom de marque configuré, puis renverra le flux PNG brut avec un système de cache pour ne pas surcharger le serveur à chaque partage !
-
----
-
-## 🛠️ Rendu et Intégration des Composants Spécifiques
-
-Voici les guides pour afficher et intégrer chaque fonctionnalité avancée dans votre code.
-
-### 1. Rendu du Dossier Académique (Blocs Composés de Projets)
-
-Le champ `dossier` de chaque projet contient une liste ordonnée de blocs au format JSON. Chaque bloc possède un `type` décrivant sa disposition graphique.
-
-#### Intégration React
+#### Rendu React dynamique
 ```jsx
 function ProjetDossier({ dossier }) {
   if (!dossier || dossier.length === 0) return null;
@@ -510,63 +383,19 @@ function ProjetDossier({ dossier }) {
   );
 }
 ```
+</details>
 
-#### Intégration PHP
-```php
-<?php if (!empty($projet['dossier'])): ?>
-    <div class="project-dossier">
-        <?php foreach ($projet['dossier'] as $bloc): 
-            $type = $bloc['type'] ?? '';
-            $titre = $bloc['titre'] ?? '';
-            $texte = $bloc['texte'] ?? '';
-            $image1 = $bloc['image1'] ?? '';
-            $alt1 = $bloc['alt1'] ?? '';
-            $legende1 = $bloc['legende1'] ?? '';
-            $image2 = $bloc['image2'] ?? '';
-            $alt2 = $bloc['alt2'] ?? '';
-            $legende2 = $bloc['legende2'] ?? '';
-            $accent = $bloc['accent'] ?? '';
-        ?>
-            <?php if (in_array($type, ['text', 'consigne', 'brief', 'concept', 'defis', 'resultats'])): ?>
-                <div class="block-text block-<?php echo $type; ?>" style="border-color: <?php echo htmlspecialchars($accent); ?>">
-                    <?php if ($titre): ?><h2><?php echo htmlspecialchars($titre); ?></h2><?php endif; ?>
-                    <div class="text-content"><?php echo nl2br(htmlspecialchars($texte)); ?></div>
-                </div>
-            <?php elseif ($type === 'text_image'): ?>
-                <div class="block-grid block-text-image">
-                    <div class="col-text">
-                        <?php if ($titre): ?><h2><?php echo htmlspecialchars($titre); ?></h2><?php endif; ?>
-                        <p><?php echo nl2br(htmlspecialchars($texte)); ?></p>
-                    </div>
-                    <div class="col-media">
-                        <img src="<?php echo htmlspecialchars($image1); ?>" alt="<?php echo htmlspecialchars($alt1); ?>">
-                        <?php if ($legende1): ?><p class="caption"><?php echo htmlspecialchars($legende1); ?></p><?php endif; ?>
-                    </div>
-                </div>
-            <?php elseif ($type === 'full_image'): ?>
-                <div class="block-full-width">
-                    <?php if ($titre): ?><h2><?php echo htmlspecialchars($titre); ?></h2><?php endif; ?>
-                    <img src="<?php echo htmlspecialchars($image1); ?>" alt="<?php echo htmlspecialchars($alt1); ?>">
-                    <?php if ($legende1): ?><p class="caption"><?php echo htmlspecialchars($legende1); ?></p><?php endif; ?>
-                </div>
-            <?php endif; ?>
-        <?php endforeach; ?>
-    </div>
-<?php endif; ?>
-```
+<details>
+<summary><b>🖼️ 2. Galerie Multimédia & Vidéos</b></summary>
 
----
+Chaque projet possède un tableau `galerie` formaté comme suit : `[chemin, legende, type]`. Le `type` peut être `image` ou `video`. Si le projet possède un `youtubeId`, vous pouvez directement intégrer un player iframe.
 
-### 2. Rendu de la Galerie Multimédia (avec Vidéos YouTube)
-
-La galerie est stockée sous la forme d'un tableau d'éléments structurés ainsi : `[chemin_du_media, legende, type_media]`. Le type peut être `image` ou `video`. Si le média provient d'une URL de type YouTube ou similaire, il est géré dynamiquement.
-
-#### Rendu React
+#### Composant React
 ```jsx
 function ProjetGalerie({ galerie, youtubeId }) {
   return (
     <div className="project-gallery">
-      {/* 1. Rendu de la vidéo YouTube principale si renseignée */}
+      {/* Vidéo YouTube */}
       {youtubeId && (
         <div className="video-container">
           <iframe
@@ -577,7 +406,7 @@ function ProjetGalerie({ galerie, youtubeId }) {
         </div>
       )}
 
-      {/* 2. Rendu des images de la galerie */}
+      {/* Galerie d'images et vidéos locales */}
       <div className="gallery-grid">
         {galerie.map((item, index) => {
           const [path, caption, type] = item;
@@ -586,7 +415,7 @@ function ProjetGalerie({ galerie, youtubeId }) {
               {type === 'video' ? (
                 <video src={`/${path}`} controls />
               ) : (
-                <img src={`/${path}`} alt={caption || 'Visuel galerie'} />
+                <img src={`/${path}`} alt={caption || 'Visuel'} />
               )}
               {caption && <p className="caption">{caption}</p>}
             </div>
@@ -597,14 +426,14 @@ function ProjetGalerie({ galerie, youtubeId }) {
   );
 }
 ```
+</details>
 
----
+<details>
+<summary><b>📅 3. Parcours Chronologique (Timeline)</b></summary>
 
-### 3. Rendu du Parcours (Timeline Chronologique)
+Affichage vertical des étapes de formation ou d'expérience stockées dans `data.parcours`.
 
-Le parcours est stocké dans l'objet global `data.parcours`. Vous pouvez en faire un rendu vertical stylisé en CSS.
-
-#### Rendu PHP
+#### Rendu PHP / HTML
 ```php
 <?php if (!empty($data['parcours'])): ?>
     <div class="timeline">
@@ -620,19 +449,18 @@ Le parcours est stocké dans l'objet global `data.parcours`. Vous pouvez en fair
     </div>
 <?php endif; ?>
 ```
+</details>
 
----
+<details>
+<summary><b>⚡ 4. Compétences & Outils (Logos)</b></summary>
 
-### 4. Rendu des Compétences & Outils (Logos)
+Rendu des soft/hard skills et affichage des outils maîtrisés sous forme de grille de logos.
 
-Les soft skills, hard skills et outils (logos) sont également stockés dans des tableaux séparés pour un affichage sur votre page À propos.
-
-#### Affichage des Outils/Logos en React
+#### Composant React
 ```jsx
 function SkillsList({ skillsHumaines, skillsTechniques, logos }) {
   return (
     <div className="skills-section">
-      {/* Compétences Humaines */}
       <h2>Soft Skills</h2>
       <ul className="soft-skills">
         {skillsHumaines.map((s, i) => (
@@ -642,7 +470,6 @@ function SkillsList({ skillsHumaines, skillsTechniques, logos }) {
         ))}
       </ul>
 
-      {/* Outils & Logiciels (avec logos) */}
       <h2>Outils & Logiciels</h2>
       <div className="logos-grid">
         {logos.map((logo, i) => (
@@ -656,6 +483,30 @@ function SkillsList({ skillsHumaines, skillsTechniques, logos }) {
   );
 }
 ```
+</details>
+
+<details>
+<summary><b>🔍 5. Image de Partage Dynamique (Open Graph)</b></summary>
+
+Associez l'image Open Graph dynamique en injectant ce bloc dans la balise `<head>` de vos pages de détails de projets :
+
+```html
+<meta property="og:title" content="<?php echo htmlspecialchars($projet['titre']); ?>" />
+<meta property="og:description" content="<?php echo htmlspecialchars($projet['seo_description'] ?? $projet['sousTitre']); ?>" />
+<meta property="og:image" content="https://monportfolio.com/gestion_interne/og_image.php?slug=<?php echo $projet['projetId']; ?>" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://monportfolio.com/gestion_interne/og_image.php?slug=<?php echo $projet['projetId']; ?>" />
+```
+</details>
+
+---
+
+## 🖼️ Gestion des médias & Miniature optimisée
+
+1.  **Miniature automatique** : Lors de l'upload d'une image, le panel génère une version ultra-légère dans un sous-dossier caché `.thumbs/`. Utilisez-la pour charger rapidement votre grille de projets (ex: `images/.thumbs/couverture.webp` au lieu de `images/couverture.webp`).
+2.  **Conversion WebP** : Le module d'upload convertit automatiquement les fichiers PNG et JPG en WebP (avec compression configurable) pour améliorer les performances de votre site.
 
 ---
 
@@ -663,8 +514,8 @@ function SkillsList({ skillsHumaines, skillsTechniques, logos }) {
 
 Ce panel d'administration pour portfolio sans base de données a été imaginé, conçu et entièrement développé par **Paul Chéhère Le Lann**.
 
-- **Portfolio** : [paul-c.fr](https://paul-c.fr)
-- **GitHub** : [@iampaulc](https://github.com/iampaulc)
-- **Instagram** : [@iampaulc_](https://instagram.com/iampaulc_)
+*   **Portfolio** : [paul-c.fr](https://paul-c.fr)
+*   **GitHub** : [@iampaulc](https://github.com/iampaulc)
+*   **Instagram** : [@iampaulc_](https://instagram.com/iampaulc_)
 
-*N'hésitez pas à mentionner ce crédit ou à laisser une étoile ⭐ sur le dépôt GitHub si ce panel d'administration vous a aidé dans la gestion de votre portfolio !*
+*N'hésitez pas à mentionner ce crédit ou à laisser une étoile ⭐ sur le dépôt GitHub si ce projet vous a aidé dans la gestion de votre portfolio !*
